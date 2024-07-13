@@ -9,21 +9,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnOnLogin(_ sender: Any) {
+        
     }
-    */
-
+    
+    @IBAction func btnOnForgotPassword(_ sender: Any) {
+        self.pushVc(viewConterlerId: "ForgotPasswordViewController")
+    }
+    
+    @IBAction func btnOnSignUp(_ sender: Any) {
+        self.pushVc(viewConterlerId: "SignUpViewController")
+    }
+    
 }

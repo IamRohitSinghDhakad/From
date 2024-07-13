@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A01D0F72C430FEB0028F7A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */; };
+		0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92FCC52C430807004143D7 /* SignUpViewController.swift */; };
 		D9B7561DC817B3888B4CE751 /* Pods_From.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE396B9F3F922D21AC763FFA /* Pods_From.framework */; };
 		F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */; };
 		F9D450C72C3315560003797A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450C62C3315560003797A /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0A92FCC52C430807004143D7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		252713CEB9A476BE326AEE20 /* Pods-From.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.debug.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.debug.xcconfig"; sourceTree = "<group>"; };
 		69B180EF502D11B2C4BE3338 /* Pods-From.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.release.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.release.xcconfig"; sourceTree = "<group>"; };
 		BE396B9F3F922D21AC763FFA /* Pods_From.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_From.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +147,6 @@
 				F9D450F22C3325290003797A /* Utilities */,
 				F9D450F52C3325290003797A /* WebServiceManager */,
 				F9D450C62C3315560003797A /* AppDelegate.swift */,
-				F9D450CA2C3315560003797A /* ViewController.swift */,
 				F9D450CC2C3315560003797A /* Main.storyboard */,
 				F9D450CF2C3315580003797A /* Assets.xcassets */,
 				F9D450D12C3315580003797A /* LaunchScreen.storyboard */,
@@ -231,6 +234,9 @@
 			children = (
 				F9D4511F2C3325EA0003797A /* LoginViewController.swift */,
 				F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */,
+				F9D450CA2C3315560003797A /* ViewController.swift */,
+				0A92FCC52C430807004143D7 /* SignUpViewController.swift */,
+				0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D451032C3325290003797A /* NotificationModel.swift in Sources */,
+				0A01D0F72C430FEB0028F7A8 /* ForgotPasswordViewController.swift in Sources */,
 				F9D451102C3325290003797A /* RDTextView.swift in Sources */,
 				F9D4510D2C3325290003797A /* Extensions.swift in Sources */,
 				F9D451082C3325290003797A /* AlertViewController.swift in Sources */,
@@ -382,6 +389,7 @@
 				F9D451042C3325290003797A /* RegistrationModel.swift in Sources */,
 				F9D451012C3325290003797A /* HomeModel.swift in Sources */,
 				F9D4511D2C3325510003797A /* AppSharedData.swift in Sources */,
+				0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */,
 				F9D451132C3325290003797A /* WebServiceHelper.swift in Sources */,
 				F9D450CB2C3315560003797A /* ViewController.swift in Sources */,
 				F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */,
