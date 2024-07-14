@@ -20,7 +20,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnOnLogin(_ sender: Any) {
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let vc = (self.mainStoryboard.instantiateViewController(withIdentifier: "SideMenuController") as? SideMenuController)!
+        let navController = UINavigationController(rootViewController: vc)
+        navController.isNavigationBarHidden = true
+        appDelegate.window?.rootViewController = navController
     }
     
     @IBAction func btnOnForgotPassword(_ sender: Any) {
