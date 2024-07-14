@@ -19,7 +19,7 @@ class CustomView: UIView {
     var userModel : UserModel! {
         didSet{
             self.labelText.attributedText = self.attributeStringForModel(userModel: userModel)
-            self.imageViewBackground.image = UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
+          //  self.imageViewBackground.image =  self.attributeImageForModel(userModel: userModel)   //UIImage(named:String(Int(1 + arc4random() % (8 - 1))))
         }
     }
     
@@ -37,18 +37,17 @@ class CustomView: UIView {
         Bundle.main.loadNibNamed(CustomView.className, owner: self, options: nil)
         contentView.fixInView(self)
         
-        imageViewProfile.contentMode = .scaleAspectFill
-        imageViewProfile.layer.cornerRadius = 30
-        imageViewProfile.clipsToBounds = true
+        imageViewBackground.contentMode = .scaleAspectFill
+        imageViewBackground.layer.cornerRadius = 30
+        imageViewBackground.clipsToBounds = true
     }
     
     private func attributeStringForModel(userModel:UserModel) -> NSAttributedString{
         
-        let attributedText = NSMutableAttributedString(string: userModel.name, attributes: [.foregroundColor: UIColor.white,.font:UIFont.boldSystemFont(ofSize: 25)])
-        attributedText.append(NSAttributedString(string: "\nnums :\(userModel.num) - (nib view)" , attributes: [.foregroundColor: UIColor.white,.font:UIFont.systemFont(ofSize: 18)]))
+        let attributedText = NSMutableAttributedString(string: userModel.name, attributes: [.foregroundColor: UIColor.white,.font:UIFont.boldSystemFont(ofSize: 16)])
+        attributedText.append(NSAttributedString(string: "\n\(userModel.address)" , attributes: [.foregroundColor: UIColor.white,.font:UIFont.systemFont(ofSize: 12)]))
         return attributedText
     }
-
 }
 
 extension UIView{

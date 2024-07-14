@@ -97,7 +97,7 @@ extension SideMenuController {
             public var statusBarBehavior: StatusBarBehavior = .none
 
             /// Whether the pan gesture should be enabled. The default is true.
-            public var enablePanGesture = true
+            public var enablePanGesture = false
 
             /// If enabled, the menu view will act like a rubber band when reaching the border. The default is true.
             public var enableRubberEffectWhenPanning = true

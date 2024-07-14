@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0A01D0F72C430FEB0028F7A8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */; };
+		0A02F9AC2C43D9D40055A4E4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9AB2C43D9D30055A4E4 /* ChatViewController.swift */; };
+		0A02F9AF2C43DA140055A4E4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9AE2C43DA140055A4E4 /* ActivityViewController.swift */; };
+		0A02F9B22C43DA3F0055A4E4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B12C43DA3F0055A4E4 /* SettingViewController.swift */; };
+		0A02F9B52C43DC500055A4E4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B32C43DC500055A4E4 /* SettingTableViewCell.swift */; };
+		0A02F9B62C43DC500055A4E4 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F9B42C43DC500055A4E4 /* SettingTableViewCell.xib */; };
+		0A02F9B82C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B72C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift */; };
+		0A02F9BA2C4429EA0055A4E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B92C4429EA0055A4E4 /* WebViewController.swift */; };
+		0A9198512C43A654004A951A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198502C43A654004A951A /* MyProfileViewController.swift */; };
+		0A9198542C43A70F004A951A /* SetInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198532C43A70F004A951A /* SetInterestViewController.swift */; };
+		0A9198572C43B88D004A951A /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198562C43B88D004A951A /* MembershipViewController.swift */; };
 		0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92FCC52C430807004143D7 /* SignUpViewController.swift */; };
 		D9B7561DC817B3888B4CE751 /* Pods_From.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE396B9F3F922D21AC763FFA /* Pods_From.framework */; };
 		F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */; };
@@ -70,6 +80,16 @@
 
 /* Begin PBXFileReference section */
 		0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0A02F9AB2C43D9D30055A4E4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0A02F9AE2C43DA140055A4E4 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		0A02F9B12C43DA3F0055A4E4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0A02F9B32C43DC500055A4E4 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		0A02F9B42C43DC500055A4E4 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		0A02F9B72C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A02F9B92C4429EA0055A4E4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0A9198502C43A654004A951A /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		0A9198532C43A70F004A951A /* SetInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInterestViewController.swift; sourceTree = "<group>"; };
+		0A9198562C43B88D004A951A /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
 		0A92FCC52C430807004143D7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		252713CEB9A476BE326AEE20 /* Pods-From.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.debug.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.debug.xcconfig"; sourceTree = "<group>"; };
 		69B180EF502D11B2C4BE3338 /* Pods-From.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.release.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +177,58 @@
 				69B180EF502D11B2C4BE3338 /* Pods-From.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		0A02F9AA2C43D9C70055A4E4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0A02F9AB2C43D9D30055A4E4 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		0A02F9AD2C43D9FF0055A4E4 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				0A02F9AE2C43DA140055A4E4 /* ActivityViewController.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		0A02F9B02C43DA350055A4E4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				0A02F9B12C43DA3F0055A4E4 /* SettingViewController.swift */,
+				0A02F9B32C43DC500055A4E4 /* SettingTableViewCell.swift */,
+				0A02F9B42C43DC500055A4E4 /* SettingTableViewCell.xib */,
+				0A02F9B92C4429EA0055A4E4 /* WebViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		0A91984F2C43A644004A951A /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0A9198502C43A654004A951A /* MyProfileViewController.swift */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
+		0A9198522C43A6F6004A951A /* Set Interest */ = {
+			isa = PBXGroup;
+			children = (
+				0A9198532C43A70F004A951A /* SetInterestViewController.swift */,
+			);
+			path = "Set Interest";
+			sourceTree = "<group>";
+		};
+		0A9198552C43B868004A951A /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				0A9198562C43B88D004A951A /* MembershipViewController.swift */,
+				0A02F9B72C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift */,
+			);
+			path = Membership;
 			sourceTree = "<group>";
 		};
 		F98C257D2C43151700A50A0F /* SideMenu */ = {
@@ -356,6 +428,12 @@
 		F9D4511E2C3325D20003797A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A02F9B02C43DA350055A4E4 /* Setting */,
+				0A02F9AD2C43D9FF0055A4E4 /* Activity */,
+				0A02F9AA2C43D9C70055A4E4 /* Chat */,
+				0A9198552C43B868004A951A /* Membership */,
+				0A9198522C43A6F6004A951A /* Set Interest */,
+				0A91984F2C43A644004A951A /* My Profile */,
 				F9D4511F2C3325EA0003797A /* LoginViewController.swift */,
 				F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */,
 				F9D450CA2C3315560003797A /* ViewController.swift */,
@@ -440,6 +518,7 @@
 				F9D451162C3325290003797A /* LocationPicker.storyboard in Resources */,
 				F9D450D32C3315580003797A /* Base in Resources */,
 				F9D450CE2C3315560003797A /* Base in Resources */,
+				0A02F9B62C43DC500055A4E4 /* SettingTableViewCell.xib in Resources */,
 				F98C25A12C431CFE00A50A0F /* CustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,13 +582,17 @@
 				F98C25882C43151700A50A0F /* Delegate.swift in Sources */,
 				F9D451182C3325290003797A /* LocationSearchResultsViewController.swift in Sources */,
 				F9D4510F2C3325290003797A /* MessageConstant.swift in Sources */,
+				0A02F9AC2C43D9D40055A4E4 /* ChatViewController.swift in Sources */,
 				F98C258D2C43151700A50A0F /* TransitionContext.swift in Sources */,
 				F98C25872C43151700A50A0F /* BasicTransitionAnimator.swift in Sources */,
 				F98C25892C43151700A50A0F /* Preferences.swift in Sources */,
 				F9D451112C3325290003797A /* TableViewExtension.swift in Sources */,
 				F9D451152C3325290003797A /* Location.swift in Sources */,
+				0A02F9AF2C43DA140055A4E4 /* ActivityViewController.swift in Sources */,
+				0A02F9BA2C4429EA0055A4E4 /* WebViewController.swift in Sources */,
 				F98C25912C43151700A50A0F /* RevealViewController.swift in Sources */,
 				F9D4510E2C3325290003797A /* MediaPicker.swift in Sources */,
+				0A9198542C43A70F004A951A /* SetInterestViewController.swift in Sources */,
 				F9D450FE2C3325290003797A /* ChatDetailModel.swift in Sources */,
 				F9D451052C3325290003797A /* StoreModel.swift in Sources */,
 				F98C258C2C43151700A50A0F /* StatusBar.swift in Sources */,
@@ -519,18 +602,23 @@
 				F98C258E2C43151700A50A0F /* UIView+Container.swift in Sources */,
 				F9D4510C2C3325290003797A /* CustomUIView.swift in Sources */,
 				F9D451122C3325290003797A /* TimePickerManager.swift in Sources */,
+				0A02F9B22C43DA3F0055A4E4 /* SettingViewController.swift in Sources */,
 				F98C258F2C43151700A50A0F /* UIViewController+Container.swift in Sources */,
 				F9D4510B2C3325290003797A /* CustomUITextField.swift in Sources */,
 				F9D450FF2C3325290003797A /* GamePlayersModel.swift in Sources */,
 				F9D451002C3325290003797A /* GetGameModel.swift in Sources */,
 				F9D451042C3325290003797A /* RegistrationModel.swift in Sources */,
 				F98C258B2C43151700A50A0F /* SideMenuController.swift in Sources */,
+				0A02F9B82C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift in Sources */,
 				F9D451012C3325290003797A /* HomeModel.swift in Sources */,
+				0A9198512C43A654004A951A /* MyProfileViewController.swift in Sources */,
+				0A02F9B52C43DC500055A4E4 /* SettingTableViewCell.swift in Sources */,
 				F9D4511D2C3325510003797A /* AppSharedData.swift in Sources */,
 				0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */,
 				F9D451132C3325290003797A /* WebServiceHelper.swift in Sources */,
 				F9D450CB2C3315560003797A /* ViewController.swift in Sources */,
 				F98C25932C43151700A50A0F /* SWRevealViewController+Extensions.swift in Sources */,
+				0A9198572C43B88D004A951A /* MembershipViewController.swift in Sources */,
 				F98C259C2C43162100A50A0F /* AppSideMenuViewController.swift in Sources */,
 				F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */,
 				F9D451022C3325290003797A /* LoginModel.swift in Sources */,
@@ -720,7 +808,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/rohit/RohitWorkSpace/Freelance/From/From/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = From/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -757,7 +845,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/rohit/RohitWorkSpace/Freelance/From/From/BridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = From/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

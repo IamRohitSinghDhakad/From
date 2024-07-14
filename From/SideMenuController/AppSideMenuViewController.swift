@@ -33,13 +33,14 @@ class AppSideMenuViewController: UIViewController {
     var selectedIndexpath = 0
     var strBadgeCount = ""
     
-    private let menus: [SideMenuOptions] = [SideMenuOptions(menuName: "My Profile".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Set Interest".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Chat".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Membership".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Activity".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Setting".localized(), menuImageName: "", menuSelectedImageName: ""),
-                                            SideMenuOptions(menuName: "Log Out".localized(), menuImageName: "", menuSelectedImageName: "")]
+    private let menus: [SideMenuOptions] = [ SideMenuOptions(menuName: "Home".localized(), menuImageName: "", menuSelectedImageName: ""),
+        SideMenuOptions(menuName: "My Profile".localized(), menuImageName: "user_menu", menuSelectedImageName:"user_menu"),
+                                            SideMenuOptions(menuName: "Set Interest".localized(), menuImageName: "user_menu", menuSelectedImageName: "user_menu"),
+                                            SideMenuOptions(menuName: "Chat".localized(), menuImageName: "msg", menuSelectedImageName: "msg"),
+                                            SideMenuOptions(menuName: "Membership".localized(), menuImageName: "membership", menuSelectedImageName: "membership"),
+                                            SideMenuOptions(menuName: "Activity".localized(), menuImageName: "notification", menuSelectedImageName: "notification"),
+                                            SideMenuOptions(menuName: "Setting".localized(), menuImageName: "setting", menuSelectedImageName: "setting"),
+                                            SideMenuOptions(menuName: "Log Out".localized(), menuImageName: "logout", menuSelectedImageName: "logout")]
     
     
     //MARK: - Override Methods
@@ -76,25 +77,29 @@ class AppSideMenuViewController: UIViewController {
         }, with: "0")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "MyProfileViewController")
             
         }, with: "1")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "SetInterestViewController")
         }, with: "2")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController")
         }, with: "3")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "SelectLanguageViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "MembershipViewController")
         }, with: "4")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "ActivityViewController")
         }, with: "5")
+        
+        sideMenuController?.cache(viewControllerGenerator: {
+            self.storyboard?.instantiateViewController(withIdentifier: "SettingViewController")
+        }, with: "6")
     }
     
     private func configureView() {
@@ -158,12 +163,10 @@ extension AppSideMenuViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "AppSideMenuTableViewCell", for: indexPath) as! AppSideMenuTableViewCell
         let row = indexPath.row
         if self.selectedIndexpath == indexPath.row{
-         //   cell.imgVw.image = UIImage(named: menus[row].menuImageName)
+            cell.menuImage.image = UIImage(named: menus[row].menuImageName)
         }else{
-           // cell.imgVw.image = UIImage(named: menus[row].menuImageName)
+            cell.menuImage.image = UIImage(named: menus[row].menuImageName)
         }
-                
-        
         cell.menuName.text = menus[row].menuName
         return cell
     }
@@ -187,15 +190,10 @@ extension AppSideMenuViewController: UITableViewDelegate, UITableViewDataSource 
                 if let identifier = sideMenuController?.currentCacheIdentifier() {
                     print("[Example] View Controller Cache Identifier: \(identifier)")
                 }
-        case 6:
+        case 7:
             sideMenuController?.hideMenu()
             objAlert.showAlertCallBack(alertLeftBtn: "Yes".localized(), alertRightBtn: "No".localized(), title: "Logout?".localized(), message: "Do you want to log out?".localized(), controller: self) {
                 AppSharedData.sharedObject().signOut()
-            }
-        case 7:
-            sideMenuController?.hideMenu()
-            objAlert.showAlertCallBack(alertLeftBtn: "Yes".localized(), alertRightBtn: "No".localized(), title: "Delete Account?".localized(), message: "Do you want to Delete account?".localized(), controller: self) {
-                self.callWebserviceForDeleteAccount()
             }
         default:
             sideMenuController?.setContentViewController(with: "\(row)", animated: Preferences.shared.enableTransitionAnimation)

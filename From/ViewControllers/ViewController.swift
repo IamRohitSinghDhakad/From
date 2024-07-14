@@ -56,10 +56,10 @@ class ViewController: UIViewController {
     func goToNextController() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if AppSharedData.sharedObject().isLoggedIn {
-//            let vc = (self.mainStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController)!
-//            let navController = UINavigationController(rootViewController: vc)
-//            navController.isNavigationBarHidden = true
-//            appDelegate.window?.rootViewController = navController
+            let vc = (self.mainStoryboard.instantiateViewController(withIdentifier: "SideMenuController") as? SideMenuController)!
+            let navController = UINavigationController(rootViewController: vc)
+            navController.isNavigationBarHidden = true
+            appDelegate.window?.rootViewController = navController
         }
         else {
             let vc = (self.mainStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController)!

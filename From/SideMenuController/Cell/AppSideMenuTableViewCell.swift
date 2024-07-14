@@ -2,7 +2,7 @@
 //  AppSideMenuTableViewCell.swift
 //  Paing
 //
-//  Created by Akshada on 21/05/21.
+//  Created by Rohit on 21/05/21.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class AppSideMenuTableViewCell: UITableViewCell {
     
    // @IBOutlet weak var menuImage: UIImageView!
     @IBOutlet weak var menuName: UILabel!
-    @IBOutlet var imgVw: UIImageView!
+    @IBOutlet var menuImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
