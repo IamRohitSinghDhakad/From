@@ -39,6 +39,7 @@
 		F98C259C2C43162100A50A0F /* AppSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25992C43162000A50A0F /* AppSideMenuViewController.swift */; };
 		F98C25A02C431CFE00A50A0F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C259D2C431CFE00A50A0F /* CustomView.swift */; };
 		F98C25A12C431CFE00A50A0F /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98C259E2C431CFE00A50A0F /* CustomView.xib */; };
+		F98C25B02C445D1E00A50A0F /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25AF2C445D1E00A50A0F /* ChatDetailViewController.swift */; };
 		F9D450C72C3315560003797A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450C62C3315560003797A /* AppDelegate.swift */; };
 		F9D450CB2C3315560003797A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450CA2C3315560003797A /* ViewController.swift */; };
 		F9D450CE2C3315560003797A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F9D450CD2C3315560003797A /* Base */; };
@@ -117,6 +118,7 @@
 		F98C25992C43162000A50A0F /* AppSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSideMenuViewController.swift; sourceTree = "<group>"; };
 		F98C259D2C431CFE00A50A0F /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F98C259E2C431CFE00A50A0F /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		F98C25AF2C445D1E00A50A0F /* ChatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
 		F9D450C32C3315560003797A /* From.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = From.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D450C62C3315560003797A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D450CA2C3315560003797A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				0A02F9AB2C43D9D30055A4E4 /* ChatViewController.swift */,
+				F98C25AF2C445D1E00A50A0F /* ChatDetailViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */,
 				F9D451022C3325290003797A /* LoginModel.swift in Sources */,
 				F98C25962C43159A00A50A0F /* HomeViewController.swift in Sources */,
+				F98C25B02C445D1E00A50A0F /* ChatDetailViewController.swift in Sources */,
 				F9D450FD2C3325290003797A /* CategoryModel.swift in Sources */,
 				F9D451142C3325290003797A /* WebServiceManager.swift in Sources */,
 				F9D451062C3325290003797A /* UserModel.swift in Sources */,

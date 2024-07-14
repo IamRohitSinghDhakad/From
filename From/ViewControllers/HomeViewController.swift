@@ -26,11 +26,22 @@ class HomeViewController: UIViewController {
         }
     }
     
+    let locationManager = CLLocationManager()
+    var sourceLatitude = ""
+    var sourceLongitude = ""
+    var age = ""
+    var gender = ""
+    var distance = ""
     var arrUserModal = [UserModel]()
     var arrIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        
         call_WsGetUsers()
     }
     
@@ -111,6 +122,15 @@ class HomeViewController: UIViewController {
     
 }
 
+extension HomeViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.sourceLatitude = "\(locValue.latitude)"
+        self.sourceLongitude = "\(locValue.longitude)"
+        locationManager.stopUpdatingLocation()
+    }
+}
 
 //MARK: TinderView Extra Functions
 extension HomeViewController{
@@ -250,12 +270,13 @@ extension HomeViewController{
         var dicrParam = [String:Any]()
         
         dicrParam = ["login_id":objAppShareData.UserDetail.strUser_id,
-                     "distance":"",
-                     "gender":"",
-                     "age":"",
-                     "lat":"",
-                     "long":""]as [String:Any]
+                     "distance":self.distance,
+                     "gender":self.gender,
+                     "age":self.age,
+                     "lat":self.sourceLatitude,
+                     "long":self.sourceLongitude]as [String:Any]
         
+        print(dicrParam)
         
         objWebServiceManager.requestPost(strURL: WsUrl.url_GetUsers, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
             objWebServiceManager.hideIndicator()
