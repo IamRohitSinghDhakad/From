@@ -35,7 +35,7 @@ class AppSideMenuViewController: UIViewController {
     
     private let menus: [SideMenuOptions] = [ SideMenuOptions(menuName: "Home".localized(), menuImageName: "home", menuSelectedImageName: "home"),
         SideMenuOptions(menuName: "My Profile".localized(), menuImageName: "user_menu", menuSelectedImageName:"user_menu"),
-                                            SideMenuOptions(menuName: "Set Interest".localized(), menuImageName: "user_menu", menuSelectedImageName: "user_menu"),
+                                            SideMenuOptions(menuName: "Set Interest".localized(), menuImageName: "hobbies", menuSelectedImageName: "hobbies"),
                                             SideMenuOptions(menuName: "Chat".localized(), menuImageName: "msg", menuSelectedImageName: "msg"),
                                             SideMenuOptions(menuName: "Membership".localized(), menuImageName: "membership", menuSelectedImageName: "membership"),
                                             SideMenuOptions(menuName: "Activity".localized(), menuImageName: "notification", menuSelectedImageName: "notification"),
