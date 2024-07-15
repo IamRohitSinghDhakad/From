@@ -16,6 +16,7 @@ class CustomView: UIView {
     @IBOutlet weak var imageViewBackground: UIImageView!
     @IBOutlet weak var buttonAction: UIButton!
     
+    
     var userModel : UserModel! {
         didSet{
             self.labelText.attributedText = self.attributeStringForModel(userModel: userModel)
@@ -34,6 +35,9 @@ class CustomView: UIView {
     }
     
     func commonInit() {
+        
+        
+        
         Bundle.main.loadNibNamed(CustomView.className, owner: self, options: nil)
         contentView.fixInView(self)
         

@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     @IBOutlet weak var imgVwFemaleCheckBox: UIImageView!
     @IBOutlet weak var imgVwTransMaleCheckBox: UIImageView!
     @IBOutlet weak var imgVwTransFemaleCheckBox: UIImageView!
+    @IBOutlet weak var imgVwEULA: UIImageView!
     
     var destinationLatitude = Double()
     var destinationLongitude = Double()
@@ -107,11 +108,11 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     }
     
     func tracingLocation(currentLocation: [String : Any]) {
-        <#code#>
+        
     }
     
     func tracingLocationDidFailWithError(error: NSError) {
-        <#code#>
+        
     }
     
     @IBAction func btnGoBack(_ sender: Any) {
@@ -135,6 +136,9 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
             print("Trans FeMale")
         }
         
+        
+    }
+    @IBAction func btnGoToEULA(_ sender: Any) {
         
     }
     

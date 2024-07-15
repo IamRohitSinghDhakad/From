@@ -26,7 +26,7 @@ struct WsUrl{
     static let url_GetCategory = BASE_URL + "get_category"
     static let url_AddGame = BASE_URL + "add_game"
     static let url_GetUsers = BASE_URL + "get_users"
-    static let url_RequestJoineGame = BASE_URL + "request_to_join_game"
+    static let url_GetUserImages = BASE_URL + "get_user_images"
     static let url_ChangePassword = BASE_URL + "change_password"
     static let url_ContactUs = BASE_URL + "contact_us"
     static let url_GetGamePlayers = BASE_URL + "get_game_players"
@@ -41,11 +41,6 @@ struct WsUrl{
     static let url_ReportUser = BASE_URL + "report"
     static let url_BlockUser = BASE_URL + "block"
     static let url_DeleteAccunt = BASE_URL + "delete_user?user_id="
-    
-    
-    
-//https://socialgamepro.com/admin/index.php/api/block?user_id=2&blocked_by=3
-//https://socialgamepro.com/admin/index.php/api/report?user_id=2&reported_by=3
 }
 
 

@@ -19,6 +19,9 @@
 		0A9198542C43A70F004A951A /* SetInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198532C43A70F004A951A /* SetInterestViewController.swift */; };
 		0A9198572C43B88D004A951A /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198562C43B88D004A951A /* MembershipViewController.swift */; };
 		0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92FCC52C430807004143D7 /* SignUpViewController.swift */; };
+		0ACFA5E92C44E74A00AC2976 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5E82C44E74A00AC2976 /* ChatTableViewCell.swift */; };
+		0ACFA5EB2C44E9A000AC2976 /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5EA2C44E9A000AC2976 /* ReportUserViewController.swift */; };
+		0ACFA5ED2C4527C500AC2976 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */; };
 		D9B7561DC817B3888B4CE751 /* Pods_From.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE396B9F3F922D21AC763FFA /* Pods_From.framework */; };
 		F98C25712C42FDD900A50A0F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */; };
 		F98C25872C43151700A50A0F /* BasicTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C25722C43151700A50A0F /* BasicTransitionAnimator.swift */; };
@@ -47,7 +50,7 @@
 		F9D450D32C3315580003797A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F9D450D22C3315580003797A /* Base */; };
 		F9D450FD2C3325290003797A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DA2C3325290003797A /* CategoryModel.swift */; };
 		F9D450FE2C3325290003797A /* ChatDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DB2C3325290003797A /* ChatDetailModel.swift */; };
-		F9D450FF2C3325290003797A /* GamePlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DC2C3325290003797A /* GamePlayersModel.swift */; };
+		F9D450FF2C3325290003797A /* GetUsersImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */; };
 		F9D451002C3325290003797A /* GetGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DD2C3325290003797A /* GetGameModel.swift */; };
 		F9D451012C3325290003797A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DE2C3325290003797A /* HomeModel.swift */; };
 		F9D451022C3325290003797A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DF2C3325290003797A /* LoginModel.swift */; };
@@ -92,6 +95,9 @@
 		0A9198532C43A70F004A951A /* SetInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInterestViewController.swift; sourceTree = "<group>"; };
 		0A9198562C43B88D004A951A /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
 		0A92FCC52C430807004143D7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0ACFA5E82C44E74A00AC2976 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		0ACFA5EA2C44E9A000AC2976 /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
+		0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		252713CEB9A476BE326AEE20 /* Pods-From.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.debug.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.debug.xcconfig"; sourceTree = "<group>"; };
 		69B180EF502D11B2C4BE3338 /* Pods-From.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-From.release.xcconfig"; path = "Target Support Files/Pods-From/Pods-From.release.xcconfig"; sourceTree = "<group>"; };
 		BE396B9F3F922D21AC763FFA /* Pods_From.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_From.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +134,7 @@
 		F9D450D42C3315580003797A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9D450DA2C3325290003797A /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		F9D450DB2C3325290003797A /* ChatDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDetailModel.swift; sourceTree = "<group>"; };
-		F9D450DC2C3325290003797A /* GamePlayersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayersModel.swift; sourceTree = "<group>"; };
+		F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersImagesModel.swift; sourceTree = "<group>"; };
 		F9D450DD2C3325290003797A /* GetGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameModel.swift; sourceTree = "<group>"; };
 		F9D450DE2C3325290003797A /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		F9D450DF2C3325290003797A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 			children = (
 				0A02F9AB2C43D9D30055A4E4 /* ChatViewController.swift */,
 				F98C25AF2C445D1E00A50A0F /* ChatDetailViewController.swift */,
+				0ACFA5E82C44E74A00AC2976 /* ChatTableViewCell.swift */,
+				0ACFA5EA2C44E9A000AC2976 /* ReportUserViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9198502C43A654004A951A /* MyProfileViewController.swift */,
+				0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */,
 			);
 			path = "My Profile";
 			sourceTree = "<group>";
@@ -359,7 +368,7 @@
 			children = (
 				F9D450DA2C3325290003797A /* CategoryModel.swift */,
 				F9D450DB2C3325290003797A /* ChatDetailModel.swift */,
-				F9D450DC2C3325290003797A /* GamePlayersModel.swift */,
+				F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */,
 				F9D450DD2C3325290003797A /* GetGameModel.swift */,
 				F9D450DE2C3325290003797A /* HomeModel.swift */,
 				F9D450DF2C3325290003797A /* LoginModel.swift */,
@@ -437,12 +446,12 @@
 				0A9198552C43B868004A951A /* Membership */,
 				0A9198522C43A6F6004A951A /* Set Interest */,
 				0A91984F2C43A644004A951A /* My Profile */,
+				F98C25952C43159A00A50A0F /* HomeViewController.swift */,
 				F9D4511F2C3325EA0003797A /* LoginViewController.swift */,
 				F98C25702C42FDD900A50A0F /* WelcomeViewController.swift */,
 				F9D450CA2C3315560003797A /* ViewController.swift */,
 				0A92FCC52C430807004143D7 /* SignUpViewController.swift */,
 				0A01D0F62C430FEB0028F7A8 /* ForgotPasswordViewController.swift */,
-				F98C25952C43159A00A50A0F /* HomeViewController.swift */,
 				F98C259F2C431CFE00A50A0F /* TinderView */,
 			);
 			path = ViewControllers;
@@ -593,7 +602,9 @@
 				F9D451152C3325290003797A /* Location.swift in Sources */,
 				0A02F9AF2C43DA140055A4E4 /* ActivityViewController.swift in Sources */,
 				0A02F9BA2C4429EA0055A4E4 /* WebViewController.swift in Sources */,
+				0ACFA5ED2C4527C500AC2976 /* ImagesCollectionViewCell.swift in Sources */,
 				F98C25912C43151700A50A0F /* RevealViewController.swift in Sources */,
+				0ACFA5EB2C44E9A000AC2976 /* ReportUserViewController.swift in Sources */,
 				F9D4510E2C3325290003797A /* MediaPicker.swift in Sources */,
 				0A9198542C43A70F004A951A /* SetInterestViewController.swift in Sources */,
 				F9D450FE2C3325290003797A /* ChatDetailModel.swift in Sources */,
@@ -608,12 +619,13 @@
 				0A02F9B22C43DA3F0055A4E4 /* SettingViewController.swift in Sources */,
 				F98C258F2C43151700A50A0F /* UIViewController+Container.swift in Sources */,
 				F9D4510B2C3325290003797A /* CustomUITextField.swift in Sources */,
-				F9D450FF2C3325290003797A /* GamePlayersModel.swift in Sources */,
+				F9D450FF2C3325290003797A /* GetUsersImagesModel.swift in Sources */,
 				F9D451002C3325290003797A /* GetGameModel.swift in Sources */,
 				F9D451042C3325290003797A /* RegistrationModel.swift in Sources */,
 				F98C258B2C43151700A50A0F /* SideMenuController.swift in Sources */,
 				0A02F9B82C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift in Sources */,
 				F9D451012C3325290003797A /* HomeModel.swift in Sources */,
+				0ACFA5E92C44E74A00AC2976 /* ChatTableViewCell.swift in Sources */,
 				0A9198512C43A654004A951A /* MyProfileViewController.swift in Sources */,
 				0A02F9B52C43DC500055A4E4 /* SettingTableViewCell.swift in Sources */,
 				F9D4511D2C3325510003797A /* AppSharedData.swift in Sources */,

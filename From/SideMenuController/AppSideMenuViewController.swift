@@ -33,7 +33,7 @@ class AppSideMenuViewController: UIViewController {
     var selectedIndexpath = 0
     var strBadgeCount = ""
     
-    private let menus: [SideMenuOptions] = [ SideMenuOptions(menuName: "Home".localized(), menuImageName: "", menuSelectedImageName: ""),
+    private let menus: [SideMenuOptions] = [ SideMenuOptions(menuName: "Home".localized(), menuImageName: "home", menuSelectedImageName: "home"),
         SideMenuOptions(menuName: "My Profile".localized(), menuImageName: "user_menu", menuSelectedImageName:"user_menu"),
                                             SideMenuOptions(menuName: "Set Interest".localized(), menuImageName: "user_menu", menuSelectedImageName: "user_menu"),
                                             SideMenuOptions(menuName: "Chat".localized(), menuImageName: "msg", menuSelectedImageName: "msg"),

@@ -21,6 +21,17 @@ class UserModel: NSObject {
     var address:String = ""
     var country:String = ""
     var state:String = ""
+    var strEmail: String = ""
+    var strAge : String = ""
+    var has_active_plan: String = ""
+    var dob: String = ""
+    var twitter: String = ""
+    var telegram: String = ""
+    var facebook: String = ""
+    var instagram: String = ""
+    var notification: String = ""
+    var strBio : String = ""
+    
     
     
     //    init(dict : [String : Any]) {
@@ -37,8 +48,34 @@ class UserModel: NSObject {
             user_image = userImage
         }
         
-        if let race = dictionary["race"]as? String{
-            self.userRace = race
+        if let strEmail = dictionary["email"]as? String{
+            self.strEmail = strEmail
+        }
+        
+        if let bio = dictionary["bio"]as? String{
+            self.strBio = bio
+        }
+        
+        
+        
+        if let has_active_plan = dictionary["has_active_plan"]as? String{
+            self.has_active_plan = has_active_plan
+        }else if let has_active_plan = dictionary["has_active_plan"]as? Int{
+            self.has_active_plan = "\(has_active_plan)"
+        }
+        
+        if let strAge = dictionary["age"]as? String{
+            self.strAge = strAge
+        }else if let strAge = dictionary["age"]as? Int{
+            self.strAge = "\(strAge)"
+        }
+        
+        
+        
+        if let notification = dictionary["notification"]as? String{
+            self.notification = notification
+        }else if let notification = dictionary["notification"]as? Int{
+            self.notification = "\(notification)"
         }
         
         if let isUserActive = dictionary["status"]as? String{
@@ -64,6 +101,23 @@ class UserModel: NSObject {
         }
         if let address = dictionary["address"]as? String{
             self.address = address
+        }
+        
+        if let dob = dictionary["dob"]as? String{
+            self.dob = dob
+        }
+        
+        if let instagram = dictionary["instagram"]as? String{
+            self.instagram = instagram
+        }
+        if let facebook = dictionary["facebook"]as? String{
+            self.facebook = facebook
+        }
+        if let telegram = dictionary["telegram"]as? String{
+            self.telegram = telegram
+        }
+        if let twitter = dictionary["twitter"]as? String{
+            self.twitter = twitter
         }
         
         

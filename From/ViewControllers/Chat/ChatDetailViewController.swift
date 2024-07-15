@@ -566,7 +566,7 @@ extension ChatDetailViewController{
         objWebServiceManager.showIndicator()
         
         let dicrParam = ["user_id":userID,
-                         "reported_by":objAppShareData.UserDetail.strUserId!]as [String:Any]
+                         "reported_by":objAppShareData.UserDetail.strUser_id]as [String:Any]
         
         objWebServiceManager.requestGet(strURL: WsUrl.url_ReportUser, params: dicrParam, queryParams: [:], strCustomValidation: "") { (response) in
             objWebServiceManager.hideIndicator()
@@ -621,7 +621,7 @@ extension ChatDetailViewController{
         objWebServiceManager.showIndicator()
         
         let dicrParam = ["user_id":userID,
-                         "blocked_by":objAppShareData.UserDetail.strUserId!]as [String:Any]
+                         "blocked_by":objAppShareData.UserDetail.strUser_id]as [String:Any]
         
         objWebServiceManager.requestGet(strURL: WsUrl.url_BlockUser, params: dicrParam, queryParams: [:], strCustomValidation: "") { (response) in
             objWebServiceManager.hideIndicator()

@@ -9,6 +9,7 @@ import UIKit
 import TinderSwipeView
 import CoreLocation
 import SDWebImage
+import iOSDropDown
 
 
 class HomeViewController: UIViewController {
@@ -19,6 +20,13 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var noRecordFoundView: UIView!
+    @IBOutlet weak var ageSlider: UISlider!
+    @IBOutlet weak var lblAgeFilter: UILabel!
+    @IBOutlet weak var tfGenderFilter: DropDown!
+    @IBOutlet weak var distanceSlider: UISlider!
+    @IBOutlet weak var lblKMDistanceFilter: UILabel!
+    @IBOutlet weak var vwFilter: UIView!
     @IBOutlet weak var vwContainer: UIView!
     @IBOutlet weak var vwNaviagtion: UIView!{
         didSet{
@@ -35,14 +43,39 @@ class HomeViewController: UIViewController {
     var arrUserModal = [UserModel]()
     var arrIndex = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.vwFilter.isHidden = true
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        self.noRecordFoundView.isHidden = true
+        self.tfGenderFilter.delegate = self
+        self.tfGenderFilter.optionArray = ["Male", "Female"]
+        
+        self.tfGenderFilter.didSelect { selectedText, index, id in
+            self.tfGenderFilter.text = selectedText
+            self.gender = selectedText
+        }
         
         call_WsGetUsers()
+    }
+    
+    @IBAction func distanceOnFilter(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        self.distance = "\(currentValue)"
+        self.lblKMDistanceFilter.text = "\(currentValue) KM"
+    }
+    @IBAction func ageOnFiler(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        self.age = "\(currentValue)"
+        self.lblAgeFilter.text = "\(currentValue) Years"
+    }
+    
+    
+    @IBAction func btnOnCloseFilterVw(_ sender: Any) {
+        self.vwFilter.fadeOut()
     }
     
     @IBAction func btnOnRetry(_ sender: Any) {
@@ -71,6 +104,17 @@ class HomeViewController: UIViewController {
         print(obj.name)
     }
     
+    @IBAction func btnOnApply(_ sender: Any) {
+        self.vwFilter.fadeOut()
+        self.call_WsGetUsers()
+    }
+    
+    @IBAction func btnOnrefresh(_ sender: Any) {
+        self.distance = ""
+        self.age = ""
+        self.gender = ""
+        call_WsGetUsers()
+    }
     //MARK: Configure Tinder View
     func configureTinderView() {
         let contentView: (Int, CGRect, UserModel) -> (UIView) = { (index: Int ,frame: CGRect , userModel: UserModel) -> (UIView) in
@@ -86,7 +130,7 @@ class HomeViewController: UIViewController {
             }else{
                 customView.imageViewBackground.image = #imageLiteral(resourceName: "image")
             }
-           // customView.buttonAction.addTarget(self, action: #selector(self.customViewButtonSelected), for: UIControl.Event.touchUpInside)
+            customView.buttonAction.addTarget(self, action: #selector(self.customViewButtonSelected), for: UIControl.Event.touchUpInside)
             return customView
             // Programitcally creating content view
             //            if index % 2 != 0 {
@@ -106,7 +150,7 @@ class HomeViewController: UIViewController {
         //        swipeView = TinderSwipeView<UserModel>(frame: viewContainer.bounds, contentView: contentView)
         swipeView = TinderSwipeView<UserModel>(frame: myFrame, contentView: contentView)
         vwContainer.addSubview(swipeView)
-        swipeView.showTinderCards(with: arrUserModal ,isDummyShow: false)
+        swipeView.showTinderCards(with: arrUserModal ,isDummyShow: true)
     }
     
     
@@ -117,7 +161,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func btnOpenFilter(_ sender: Any) {
-        
+        // self.vwFilter.isHidden = false
+        self.vwFilter.fadeIn()
     }
     
 }
@@ -182,6 +227,11 @@ extension HomeViewController{
         
         if let customView = button.superview(of: CustomView.self) , let userModel = customView.userModel {
             print("button selected for \(userModel.name)")
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyProfileViewController")as! MyProfileViewController
+            vc.strID = self.arrUserModal[arrIndex].strUser_id
+            vc.isComingFrom = "Home"
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
@@ -217,6 +267,10 @@ extension HomeViewController : TinderSwipeViewDelegate {
     
     func didSelectCard(model: Any) {
         print("Selected card")
+        //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyProfileViewController")as! MyProfileViewController
+        //        vc.strID = self.arrUserModal[arrIndex].strUser_id
+        //        vc.isComingFrom = "Home"
+        //        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func fallbackCard(model: Any) {
@@ -244,6 +298,7 @@ extension HomeViewController : TinderSwipeViewDelegate {
     func endOfCardsReached() {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
             self.vwNaviagtion.alpha = 0.0
+            self.noRecordFoundView.isHidden = false
         }, completion: nil)
         print("End of all cards")
         self.arrIndex = 0
@@ -292,6 +347,8 @@ extension HomeViewController{
                         self.arrUserModal.append(obj)
                     }
                     DispatchQueue.main.async {
+                        self.noRecordFoundView.isHidden = true
+                        self.vwNaviagtion.alpha = 1.0
                         self.configureTinderView()
                     }
                     
@@ -302,7 +359,13 @@ extension HomeViewController{
             }else{
                 objWebServiceManager.hideIndicator()
                 if let msgg = response["result"]as? String{
-                    objAlert.showAlert(message: msgg, title: "", controller: self)
+                    self.arrUserModal.removeAll()
+                    DispatchQueue.main.async {
+                        self.vwNaviagtion.alpha = 0.0
+                        self.swipeView.removeFromSuperview()
+                        self.noRecordFoundView.isHidden = false
+                    }
+                    // objAlert.showAlert(message: msgg, title: "", controller: self)
                 }else{
                     objAlert.showAlert(message: message ?? "", title: "", controller: self)
                 }
@@ -317,3 +380,5 @@ extension HomeViewController{
         }
     }
 }
+
+

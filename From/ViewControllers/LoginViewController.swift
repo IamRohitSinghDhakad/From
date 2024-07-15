@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var imgVwEULA: UIImageView!
     
     
     override func viewDidLoad() {
@@ -29,6 +30,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnOnSignUp(_ sender: Any) {
         self.pushVc(viewConterlerId: "SignUpViewController")
+    }
+    
+    @IBAction func btnOnGoToEULA(_ sender: Any) {
     }
     
 }
