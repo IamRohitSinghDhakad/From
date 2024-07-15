@@ -2642,7 +2642,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-r9-4wy">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GXw-nm-DKO">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="equality" translatesAutoresizingMaskIntoConstraints="NO" id="GXw-nm-DKO">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GXw-nm-DKO" secondAttribute="height" id="GeG-RD-x4B"/>
@@ -2703,7 +2703,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlg-Qa-HBQ">
                                                         <rect key="frame" x="0.0" y="110" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UjC-DN-6Gl">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="country" translatesAutoresizingMaskIntoConstraints="NO" id="UjC-DN-6Gl">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="G6u-Fg-ZTl"/>
@@ -2763,7 +2763,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-T8-MDX">
                                                         <rect key="frame" x="0.0" y="220" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ijy-pf-WFj">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="equality" translatesAutoresizingMaskIntoConstraints="NO" id="Ijy-pf-WFj">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Ijy-pf-WFj" secondAttribute="height" id="FiL-SN-YBr"/>
@@ -2800,7 +2800,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Org-xq-ywS">
                                                         <rect key="frame" x="0.0" y="275" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-0V-ZFq">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="country" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-0V-ZFq">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="iVc-K9-J5n"/>
@@ -2837,7 +2837,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-92-igu">
                                                         <rect key="frame" x="0.0" y="330" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-1f-rQQ">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="relationship" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-1f-rQQ">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="rfQ-1f-rQQ" secondAttribute="height" id="19T-pS-Fmz"/>
@@ -2874,7 +2874,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydo-SR-oyp">
                                                         <rect key="frame" x="0.0" y="385" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jUT-jq-iZa">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weights" translatesAutoresizingMaskIntoConstraints="NO" id="jUT-jq-iZa">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="laR-9E-CaE"/>
@@ -2911,7 +2911,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3L-dn-bRv">
                                                         <rect key="frame" x="0.0" y="440" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PeH-Tz-ccV">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alcohol" translatesAutoresizingMaskIntoConstraints="NO" id="PeH-Tz-ccV">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="Dol-B5-srP"/>
@@ -2948,7 +2948,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkl-Y5-ZiP">
                                                         <rect key="frame" x="0.0" y="495" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-3b-xhB">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoking" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-3b-xhB">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="HmE-sp-Fqj"/>
@@ -2985,7 +2985,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkk-ED-ces">
                                                         <rect key="frame" x="0.0" y="550" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbt-nq-FZD">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet" translatesAutoresizingMaskIntoConstraints="NO" id="zbt-nq-FZD">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="zbt-nq-FZD" secondAttribute="height" id="e44-b0-b4H"/>
@@ -3022,7 +3022,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-vw-tfW">
                                                         <rect key="frame" x="0.0" y="605" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-dW-Ihe">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love_language" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-dW-Ihe">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="UeU-6t-6X1"/>
@@ -3059,7 +3059,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qS-Gi-Jtw">
                                                         <rect key="frame" x="0.0" y="660" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c2f-A4-TyL">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="education" translatesAutoresizingMaskIntoConstraints="NO" id="c2f-A4-TyL">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="c2f-A4-TyL" secondAttribute="height" id="GgY-CA-g44"/>
@@ -3096,7 +3096,7 @@ to reset your password</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7g-Ou-dSR">
                                                         <rect key="frame" x="0.0" y="715" width="335" height="45"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fts-C2-Puo">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hobbies" translatesAutoresizingMaskIntoConstraints="NO" id="fts-C2-Puo">
                                                                 <rect key="frame" x="8" y="10" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="fts-C2-Puo" secondAttribute="height" id="OUi-zD-zN8"/>
@@ -4852,30 +4852,40 @@ to reset your password</string>
         <image name="Background copy" width="460" height="472"/>
         <image name="Shape 2" width="129" height="129"/>
         <image name="add" width="120" height="120"/>
+        <image name="alcohol" width="128" height="128"/>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="back" width="19" height="33"/>
         <image name="background_2" width="720" height="1290"/>
         <image name="chat" width="97" height="97"/>
+        <image name="country" width="128" height="128"/>
         <image name="cross" width="97" height="97"/>
         <image name="deselect" width="27" height="28"/>
         <image name="dob" width="35" height="34"/>
+        <image name="education" width="128" height="128"/>
+        <image name="equality" width="128" height="128"/>
         <image name="exclamationmark.icloud" catalog="system" width="128" height="90"/>
         <image name="exclamationmark.magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="fb" width="64" height="64"/>
         <image name="header" width="370" height="63"/>
+        <image name="hobbies" width="128" height="128"/>
         <image name="insta" width="64" height="64"/>
         <image name="left" width="38" height="25"/>
         <image name="like" width="98" height="97"/>
         <image name="location" width="35" height="35"/>
         <image name="lock" width="30" height="36"/>
+        <image name="love_language" width="128" height="128"/>
         <image name="mail" width="30" height="22"/>
+        <image name="pet" width="128" height="128"/>
+        <image name="relationship" width="128" height="128"/>
         <image name="retry" width="97" height="97"/>
         <image name="right" width="38" height="25"/>
         <image name="send" width="38" height="32"/>
+        <image name="smoking" width="128" height="128"/>
         <image name="star" width="98" height="97"/>
         <image name="telegram" width="64" height="64"/>
         <image name="twitter" width="64" height="64"/>
         <image name="user" width="30" height="30"/>
+        <image name="weights" width="128" height="128"/>
         <namedColor name="app_color">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
