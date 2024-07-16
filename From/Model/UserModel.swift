@@ -31,6 +31,9 @@ class UserModel: NSObject {
     var instagram: String = ""
     var notification: String = ""
     var strBio : String = ""
+    var mobile: String?
+    var password : String?
+    var gender : String?
     
     
     
@@ -56,7 +59,17 @@ class UserModel: NSObject {
             self.strBio = bio
         }
         
+        if let value = dictionary["gender"] as? String {
+            self.gender = value
+        }
         
+        if let value = dictionary["mobile"] as? String {
+            mobile = value
+        }
+        
+        if let value = dictionary["password"] as? String {
+            password = value
+        }
         
         if let has_active_plan = dictionary["has_active_plan"]as? String{
             self.has_active_plan = has_active_plan

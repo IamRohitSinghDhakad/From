@@ -124,20 +124,30 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     }
     
     @IBAction func btnOnGenderSelection(_ sender: UIButton) {
-        
+        resetImage()
         switch sender.tag {
         case 1:
             print("Male")
+            self.imgVwMaleCheckBox.image = UIImage(named: "select_dot")
         case 2:
             print("FeMale")
+            self.imgVwFemaleCheckBox.image = UIImage(named: "select_dot")
         case 3:
             print("Trans Male")
+            self.imgVwTransMaleCheckBox.image = UIImage(named: "select_dot")
         default:
             print("Trans FeMale")
+            self.imgVwTransFemaleCheckBox.image = UIImage(named: "select_dot")
         }
-        
-        
     }
+    
+    func resetImage(){
+        self.imgVwMaleCheckBox.image = UIImage(named: "deselect")
+        self.imgVwFemaleCheckBox.image = UIImage(named: "deselect")
+        self.imgVwTransMaleCheckBox.image = UIImage(named: "deselect")
+        self.imgVwTransFemaleCheckBox.image = UIImage(named: "deselect")
+    }
+    
     @IBAction func btnGoToEULA(_ sender: Any) {
         
     }

@@ -27,7 +27,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var vwNoPhotosFound: UIView!
     
     var arrUserImages = [GetUsersImagesModel]()
-    
+    var objUser = UserModel(from: [:])
     var strID = ""
     var isComingFrom = ""
     
@@ -69,7 +69,9 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func btnOnEdit(_ sender: Any) {
-        
+        let vc = self.mainStoryboard.instantiateViewController(withIdentifier: "EditProfileViewController")as! EditProfileViewController
+        vc.objUserData = self.objUser
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func btnOnApplyForVerifiedProfile(_ sender: Any) {
@@ -163,49 +165,50 @@ extension MyProfileViewController {
             print(response)
             if status == MessageConstant.k_StatusCode{
                 if let user_details  = response["result"] as? [String:Any] {
-                    let objUser = UserModel(from: user_details)
+                   
+                    self.objUser = UserModel(from: user_details)
                     
-                    self.lblEmail.text = objUser.strEmail
-                    self.lblAddress.text = objUser.address
-                    self.lblNameAge.text = "\(objUser.name), \(objUser.strAge)"
-                    if objUser.strBio == ""{
+                    self.lblEmail.text = self.objUser.strEmail
+                    self.lblAddress.text = self.objUser.address
+                    self.lblNameAge.text = "\(self.objUser.name), \(self.objUser.strAge)"
+                    if self.objUser.strBio == ""{
                         self.vwBio.isHidden = true
                     }else{
                         self.vwBio.isHidden = false
-                        self.lblDescription.text = objUser.strBio
+                        self.lblDescription.text = self.objUser.strBio
                     }
                     
-                    if objUser.instagram == ""{
+                    if self.objUser.instagram == ""{
                         self.vwInstagram.isHidden = true
                     }else{
                         self.vwInstagram.isHidden = false
                     }
                     
-                    if objUser.facebook == ""{
+                    if self.objUser.facebook == ""{
                         self.vwFacebook.isHidden = true
                     }else{
                         self.vwFacebook.isHidden = false
                     }
                     
-                    if objUser.twitter == ""{
+                    if self.objUser.twitter == ""{
                         self.vwTwitter.isHidden = true
                     }else{
                         self.vwTwitter.isHidden = false
                     }
                     
-                    if objUser.telegram == ""{
+                    if self.objUser.telegram == ""{
                         self.vwTelegram.isHidden = true
                     }else{
                         self.vwTelegram.isHidden = false
                     }
                     
-                    if objUser.facebook == "" && objUser.twitter == "" && objUser.instagram == "" && objUser.telegram == ""{
+                    if self.objUser.facebook == "" && self.objUser.twitter == "" && self.objUser.instagram == "" && self.objUser.telegram == ""{
                         self.vwSocialAccounts.isHidden = true
                     }else{
                         self.vwSocialAccounts.isHidden = false
                     }
                     
-                    if objUser.strBio == ""{
+                    if self.objUser.strBio == ""{
                         self.vwBio.isHidden = true
                     }else{
                         self.vwBio.isHidden = false
@@ -214,7 +217,7 @@ extension MyProfileViewController {
                     
                     
                     //Set User Image on Swipe view
-                    let imageUrl  = objUser.user_image
+                    let imageUrl  = self.objUser.user_image
                     if imageUrl != "" {
                         let url = URL(string: imageUrl)
                         self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))

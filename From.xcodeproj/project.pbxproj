@@ -15,10 +15,12 @@
 		0A02F9B62C43DC500055A4E4 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F9B42C43DC500055A4E4 /* SettingTableViewCell.xib */; };
 		0A02F9B82C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B72C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift */; };
 		0A02F9BA2C4429EA0055A4E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02F9B92C4429EA0055A4E4 /* WebViewController.swift */; };
+		0A0497E82C466090001103A0 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0497E72C466090001103A0 /* CountryTableViewCell.swift */; };
 		0A9198512C43A654004A951A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198502C43A654004A951A /* MyProfileViewController.swift */; };
 		0A9198542C43A70F004A951A /* SetInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198532C43A70F004A951A /* SetInterestViewController.swift */; };
 		0A9198572C43B88D004A951A /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9198562C43B88D004A951A /* MembershipViewController.swift */; };
 		0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92FCC52C430807004143D7 /* SignUpViewController.swift */; };
+		0AC0D20D2C462AD30069F362 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0D20C2C462AD30069F362 /* EditProfileViewController.swift */; };
 		0ACFA5E92C44E74A00AC2976 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5E82C44E74A00AC2976 /* ChatTableViewCell.swift */; };
 		0ACFA5EB2C44E9A000AC2976 /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5EA2C44E9A000AC2976 /* ReportUserViewController.swift */; };
 		0ACFA5ED2C4527C500AC2976 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */; };
@@ -51,11 +53,11 @@
 		F9D450FD2C3325290003797A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DA2C3325290003797A /* CategoryModel.swift */; };
 		F9D450FE2C3325290003797A /* ChatDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DB2C3325290003797A /* ChatDetailModel.swift */; };
 		F9D450FF2C3325290003797A /* GetUsersImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */; };
-		F9D451002C3325290003797A /* GetGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DD2C3325290003797A /* GetGameModel.swift */; };
+		F9D451002C3325290003797A /* ChatUsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DD2C3325290003797A /* ChatUsersModel.swift */; };
 		F9D451012C3325290003797A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DE2C3325290003797A /* HomeModel.swift */; };
 		F9D451022C3325290003797A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450DF2C3325290003797A /* LoginModel.swift */; };
 		F9D451032C3325290003797A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E02C3325290003797A /* NotificationModel.swift */; };
-		F9D451042C3325290003797A /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E12C3325290003797A /* RegistrationModel.swift */; };
+		F9D451042C3325290003797A /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E12C3325290003797A /* CountryModel.swift */; };
 		F9D451052C3325290003797A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E22C3325290003797A /* StoreModel.swift */; };
 		F9D451062C3325290003797A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E32C3325290003797A /* UserModel.swift */; };
 		F9D451072C3325290003797A /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450E52C3325290003797A /* FloatRatingView.swift */; };
@@ -91,10 +93,12 @@
 		0A02F9B42C43DC500055A4E4 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		0A02F9B72C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A02F9B92C4429EA0055A4E4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0A0497E72C466090001103A0 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		0A9198502C43A654004A951A /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0A9198532C43A70F004A951A /* SetInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInterestViewController.swift; sourceTree = "<group>"; };
 		0A9198562C43B88D004A951A /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
 		0A92FCC52C430807004143D7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0AC0D20C2C462AD30069F362 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0ACFA5E82C44E74A00AC2976 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		0ACFA5EA2C44E9A000AC2976 /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
 		0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -135,11 +139,11 @@
 		F9D450DA2C3325290003797A /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		F9D450DB2C3325290003797A /* ChatDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDetailModel.swift; sourceTree = "<group>"; };
 		F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersImagesModel.swift; sourceTree = "<group>"; };
-		F9D450DD2C3325290003797A /* GetGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameModel.swift; sourceTree = "<group>"; };
+		F9D450DD2C3325290003797A /* ChatUsersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUsersModel.swift; sourceTree = "<group>"; };
 		F9D450DE2C3325290003797A /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		F9D450DF2C3325290003797A /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		F9D450E02C3325290003797A /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
-		F9D450E12C3325290003797A /* RegistrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		F9D450E12C3325290003797A /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		F9D450E22C3325290003797A /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		F9D450E32C3325290003797A /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F9D450E52C3325290003797A /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				0A9198502C43A654004A951A /* MyProfileViewController.swift */,
 				0ACFA5EC2C4527C500AC2976 /* ImagesCollectionViewCell.swift */,
+				0AC0D20C2C462AD30069F362 /* EditProfileViewController.swift */,
 			);
 			path = "My Profile";
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9198532C43A70F004A951A /* SetInterestViewController.swift */,
+				0A0497E72C466090001103A0 /* CountryTableViewCell.swift */,
 			);
 			path = "Set Interest";
 			sourceTree = "<group>";
@@ -369,11 +375,11 @@
 				F9D450DA2C3325290003797A /* CategoryModel.swift */,
 				F9D450DB2C3325290003797A /* ChatDetailModel.swift */,
 				F9D450DC2C3325290003797A /* GetUsersImagesModel.swift */,
-				F9D450DD2C3325290003797A /* GetGameModel.swift */,
+				F9D450DD2C3325290003797A /* ChatUsersModel.swift */,
 				F9D450DE2C3325290003797A /* HomeModel.swift */,
 				F9D450DF2C3325290003797A /* LoginModel.swift */,
 				F9D450E02C3325290003797A /* NotificationModel.swift */,
-				F9D450E12C3325290003797A /* RegistrationModel.swift */,
+				F9D450E12C3325290003797A /* CountryModel.swift */,
 				F9D450E22C3325290003797A /* StoreModel.swift */,
 				F9D450E32C3325290003797A /* UserModel.swift */,
 			);
@@ -620,14 +626,16 @@
 				F98C258F2C43151700A50A0F /* UIViewController+Container.swift in Sources */,
 				F9D4510B2C3325290003797A /* CustomUITextField.swift in Sources */,
 				F9D450FF2C3325290003797A /* GetUsersImagesModel.swift in Sources */,
-				F9D451002C3325290003797A /* GetGameModel.swift in Sources */,
-				F9D451042C3325290003797A /* RegistrationModel.swift in Sources */,
+				F9D451002C3325290003797A /* ChatUsersModel.swift in Sources */,
+				F9D451042C3325290003797A /* CountryModel.swift in Sources */,
 				F98C258B2C43151700A50A0F /* SideMenuController.swift in Sources */,
 				0A02F9B82C43DFDA0055A4E4 /* MembershipCollectionViewCell.swift in Sources */,
 				F9D451012C3325290003797A /* HomeModel.swift in Sources */,
 				0ACFA5E92C44E74A00AC2976 /* ChatTableViewCell.swift in Sources */,
 				0A9198512C43A654004A951A /* MyProfileViewController.swift in Sources */,
 				0A02F9B52C43DC500055A4E4 /* SettingTableViewCell.swift in Sources */,
+				0A0497E82C466090001103A0 /* CountryTableViewCell.swift in Sources */,
+				0AC0D20D2C462AD30069F362 /* EditProfileViewController.swift in Sources */,
 				F9D4511D2C3325510003797A /* AppSharedData.swift in Sources */,
 				0A92FCC62C430807004143D7 /* SignUpViewController.swift in Sources */,
 				F9D451132C3325290003797A /* WebServiceHelper.swift in Sources */,
