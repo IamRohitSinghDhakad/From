@@ -67,3 +67,14 @@ class MembershipPlanModel:NSObject{
         }
     }
 }
+
+
+class PetModel: NSObject {
+    var strPetName: String
+    var isSelected: Bool
+    
+    init(petName: String, isSelected: Bool = false) {
+        self.strPetName = petName
+        self.isSelected = isSelected
+    }
+}

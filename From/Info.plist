@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs you location to show you your nearby users and also your nearby users can see your profile for match profile </string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>App need your media library access to upload your profile picture and images on your profile so other user can see your post also</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App need your camera access to upload your profile picture and images on your profile so other user can see your post also</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>

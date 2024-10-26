@@ -67,7 +67,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChatDetailViewController")as! ChatDetailViewController
+        vc.strReceiverId = self.arrUsers[indexPath.row].receiver_id ?? ""
+        vc.strSenderId = self.arrUsers[indexPath.row].sender_id ?? ""
+//        vc.strProductId = self.arrUsers[indexPath.row].product_id ?? ""
+//        vc.strUsername = self.arrUsers[indexPath.row].sender_name ?? ""
+//        vc.isBlocked = self.arrUsers[indexPath.row].strBlocked
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

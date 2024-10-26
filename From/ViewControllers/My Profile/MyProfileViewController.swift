@@ -24,12 +24,17 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var vwInstagram: UIView!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var vwAddImages: UIView!
+    @IBOutlet var subVw: UIView!
     @IBOutlet weak var vwNoPhotosFound: UIView!
+    @IBOutlet weak var imgVwOnSubVw: UIImageView!
+    @IBOutlet weak var btnDelete: UIButton!
     
     var arrUserImages = [GetUsersImagesModel]()
     var objUser = UserModel(from: [:])
     var strID = ""
     var isComingFrom = ""
+    var pickedImage = UIImage()
+    var strImageID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +54,24 @@ class MyProfileViewController: UIViewController {
             self.vwAddImages.isHidden = false
             self.call_WsGetProfile(strID: objAppShareData.UserDetail.strUser_id)
             self.call_WsGetUserImages(strID: objAppShareData.UserDetail.strUser_id)
+            self.btnDelete.isHidden = false
         }else{
             self.vwAddImages.isHidden = true
             self.vwForPaidAccount.isHidden = true
             self.btnEdit.isHidden = true
             self.call_WsGetProfile(strID: strID)
             self.call_WsGetUserImages(strID: strID)
+            self.btnDelete.isHidden = true
         }
     }
     
+    @IBAction func btnDelete(_ sender: Any) {
+        self.addSubviewWithAnimation(isAdd: false)
+        self.call_WsDeleteImage(strImageID: self.strImageID)
+    }
+    @IBAction func btnHideSubVw(_ sender: Any) {
+        self.addSubviewWithAnimation(isAdd: false)
+    }
     
     @IBAction func btnOpenSideMenu(_ sender: Any) {
         if isComingFrom == ""{
@@ -78,7 +92,15 @@ class MyProfileViewController: UIViewController {
         
     }
     @IBAction func btnOnAddImage(_ sender: Any) {
-        
+        MediaPicker.shared.pickMedia(from: self) { Image in
+            if Image != nil{
+                self.pickedImage = Image ?? UIImage()
+                self.callWebserviceForAddUserImage()
+            }else{
+                print(Image as Any)
+            }
+            
+        }
     }
 }
 
@@ -114,8 +136,18 @@ extension MyProfileViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        self.strSelectedIndex = indexPath.row
-//        self.cvPlans.reloadData()
+        let obj = self.arrUserImages[indexPath.row]
+        
+        let imageUrl  = obj.image
+        if imageUrl != "" {
+            let url = URL(string: imageUrl ?? "")
+            self.imgVwOnSubVw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+        }else{
+            self.imgVwOnSubVw.image = #imageLiteral(resourceName: "logo")
+        }
+        self.strImageID = obj.strImageId ?? ""
+        self.addSubviewWithAnimation(isAdd: true)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -300,4 +332,119 @@ extension MyProfileViewController {
             objWebServiceManager.hideIndicator()
         }
     }
+    
+    func call_WsDeleteImage(strImageID:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        
+        objWebServiceManager.showIndicator()
+        
+        var dicrParam = [String:Any]()
+        
+        dicrParam = ["image_id":strImageID]as [String:Any]
+        
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_DeleteImage, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            print(response)
+            if status == MessageConstant.k_StatusCode{
+
+                self.call_WsGetUserImages(strID: objAppShareData.UserDetail.strUser_id)
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                if let msgg = response["result"]as? String{
+                    self.arrUserImages.removeAll()
+                    self.cvIMAGES.reloadData()
+                    self.vwNoPhotosFound.isHidden = false
+                }else{
+                    objAlert.showAlert(message: message ?? "", title: "", controller: self)
+                }
+                
+                
+            }
+            
+            
+        } failure: { (Error) in
+            //  print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+    }
+    
+    
+    
+    func callWebserviceForAddUserImage(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        objWebServiceManager.showIndicator()
+        self.view.endEditing(true)
+        
+        var imageData = [Data]()
+        var imgData : Data?
+        if self.pickedImage != nil{
+            imgData = (self.pickedImage.jpegData(compressionQuality: 0.2))!
+        }
+        else {
+          //  imgData = (self.imgVwUser.image?.jpegData(compressionQuality: 0.2))!
+        }
+        imageData.append(imgData!)
+        
+        let imageParam = ["image"]
+        
+        let dicrParam = [
+            "user_id":objAppShareData.UserDetail.strUser_id,
+        ]as [String:Any]
+        
+        print(dicrParam)
+        
+        objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_AddUserImage, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData, imageToUpload: imageData, imagesParam: imageParam, fileName: "image", mimeType: "image/jpeg") { (response) in
+            objWebServiceManager.hideIndicator()
+            print(response)
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+                
+                self.call_WsGetUserImages(strID: objAppShareData.UserDetail.strUser_id)
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: response["result"] as? String ?? "", title: "Alert", controller: self)
+            }
+        } failure: { (Error) in
+            print(Error)
+        }
+    }
+}
+
+
+extension MyProfileViewController{
+    func addSubviewWithAnimation(isAdd: Bool) {
+            if isAdd {
+                self.subVw.frame = CGRect(x: 0, y: -(self.view.frame.height), width: self.view.frame.width, height: self.view.frame.height)
+                self.view.addSubview(subVw)
+                
+                UIView.animate(withDuration: 0.3) {
+                    self.subVw.frame.origin.y = 0
+                }
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.subVw.frame.origin.y = self.view.frame.height
+                } completion: { y in
+                    self.subVw.removeFromSuperview()
+                }
+            }
+        }
 }

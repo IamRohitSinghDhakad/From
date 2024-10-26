@@ -63,14 +63,72 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController")as! WebViewController
             vc.isComingFrom = self.arrMenu[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if indexPath.row == 5{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController")as! WebViewController
-            vc.isComingFrom = self.arrMenu[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        }else if indexPath.row == 4{
+            // The URL to your app on the App Store
+            let appURL = URL(string: "https://apps.apple.com/us/app/your-app-name/idYOUR_APP_ID")!
+            let items: [Any] = ["Check out this From cool app!", appURL]
+            // Initialize the activity view controller with the items you want to share
+            let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            // Exclude some activity types from the list
+            activityViewController.excludedActivityTypes = [
+                .addToReadingList,
+                .saveToCameraRoll
+            ]
+            // Present the view controller
+            present(activityViewController, animated: true, completion: nil)
         
+    }else if indexPath.row == 5{
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController")as! WebViewController
+        vc.isComingFrom = self.arrMenu[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }else if indexPath.row == 6{
+        objAlert.showAlertCallBack(alertLeftBtn: "Yes", alertRightBtn: "No", title: "Delete Account?", message: "Are you sure you want to delete account?\n this action will erase all your data", controller: self) {
+            self.call_DeleteUser()
+        }
     }
     
-    
-    
+}
+
+    func call_DeleteUser(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        
+        objWebServiceManager.showIndicator()
+        
+        var dicrParam = [String:Any]()
+        
+        var url = ""
+        dicrParam = ["user_id":objAppShareData.UserDetail.strUser_id]as [String:Any]
+            
+        url = WsUrl.url_delete_user_account
+        
+        print(dicrParam)
+        
+        objWebServiceManager.requestPost(strURL: url, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            print(response)
+            if status == MessageConstant.k_StatusCode{
+                objAppShareData.signOut()
+            }else{
+                objWebServiceManager.hideIndicator()
+                if let msgg = response["result"]as? String{
+                 
+                    objAlert.showAlert(message: msgg, title: "", controller: self)
+                }else{
+                    objAlert.showAlert(message: message ?? "", title: "", controller: self)
+                }
+            }
+        } failure: { (Error) in
+            //  print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+    }
+
 }

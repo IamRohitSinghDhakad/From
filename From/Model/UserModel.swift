@@ -35,6 +35,21 @@ class UserModel: NSObject {
     var password : String?
     var gender : String?
     
+    var str_alcohol : String?
+    var str_country : String?
+    var str_education : String?
+    var str_father_country : String?
+    var str_gym : String?
+    var str_interests : String?
+    var str_looking_for : String?
+    var str_love_language : String?
+    var str_mother_country : String?
+    var str_orientation : String?
+    var str_pet : String?
+    var str_pet_other : String?
+    var str_smoke : String?
+    var str_who_meet : String?
+    
     
     
     //    init(dict : [String : Any]) {
@@ -131,6 +146,53 @@ class UserModel: NSObject {
         }
         if let twitter = dictionary["twitter"]as? String{
             self.twitter = twitter
+        }
+        
+        
+        //================ Set Interest =================//
+        
+        if let instagram = dictionary["who_meet"]as? String{
+            self.str_who_meet = instagram
+        }
+        if let facebook = dictionary["smoke"]as? String{
+            self.str_smoke = facebook
+        }
+        if let telegram = dictionary["pet_other"]as? String{
+            self.str_pet_other = telegram
+        }
+        if let twitter = dictionary["pet"]as? String{
+            self.str_pet = twitter
+        }
+        
+        if let instagram = dictionary["orientation"]as? String{
+            self.str_orientation = instagram
+        }
+        if let facebook = dictionary["mother_country"]as? String{
+            self.str_mother_country = facebook
+        }
+        if let telegram = dictionary["love_language"]as? String{
+            self.str_love_language = telegram
+        }
+        if let twitter = dictionary["interests"]as? String{
+            self.str_interests = twitter
+        }
+        if let twitter = dictionary["looking_for"]as? String{
+            self.str_looking_for = twitter
+        }
+        if let twitter = dictionary["gym"]as? String{
+            self.str_gym = twitter
+        }
+        if let twitter = dictionary["father_country"]as? String{
+            self.str_father_country = twitter
+        }
+        if let twitter = dictionary["education"]as? String{
+            self.str_education = twitter
+        }
+        if let twitter = dictionary["country"]as? String{
+            self.str_country = twitter
+        }
+        if let twitter = dictionary["alcohol"]as? String{
+            self.str_alcohol = twitter
         }
         
         

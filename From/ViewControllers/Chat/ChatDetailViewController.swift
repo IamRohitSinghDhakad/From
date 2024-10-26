@@ -491,7 +491,8 @@ extension ChatDetailViewController{
                     self.initilizeFirstTimeOnly = false
                     // self.call_GetChatList(strUserID: objAppShareData.UserDetail.strUserId, strSenderID: self.strSenderID)
                 }else{
-                    objAlert.showAlert(message: "This user blocked you".localized(), controller: self)
+                    objAlert.showAlert(message: "You have exceeded you chat limit.", controller: self)
+                    //objAlert.showAlert(message: "This user blocked you".localized(), controller: self)
                 }
             }else{
                 objWebServiceManager.hideIndicator()

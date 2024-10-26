@@ -41,6 +41,10 @@ struct WsUrl{
     static let url_ReportUser = BASE_URL + "report"
     static let url_BlockUser = BASE_URL + "block"
     static let url_DeleteAccunt = BASE_URL + "delete_user?user_id="
+    static let url_AddUserImage = BASE_URL + "add_user_image"
+    static let url_DeleteImage = BASE_URL + "delete_image"
+    static let url_delete_user_account = BASE_URL + "delete_user_account"
+    static let url_GetActivity = BASE_URL + "get_activity"
 }
 
 

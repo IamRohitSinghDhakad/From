@@ -159,15 +159,30 @@ extension MembershipViewController{
 }
 
 
+extension NSAttributedString {
+    func withWhiteTextColor() -> NSAttributedString {
+        let mutableAttributedString = NSMutableAttributedString(attributedString: self)
+        mutableAttributedString.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: self.length))
+        return mutableAttributedString
+    }
+}
+
 extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return nil }
         do {
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+            let attributedString = try NSAttributedString(
+                data: data,
+                options: [.documentType: NSAttributedString.DocumentType.html,
+                          .characterEncoding: String.Encoding.utf8.rawValue],
+                documentAttributes: nil
+            )
+            return attributedString.withWhiteTextColor()
         } catch {
             return nil
         }
     }
+    
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }

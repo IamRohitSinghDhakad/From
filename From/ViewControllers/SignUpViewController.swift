@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController, LocationServiceDelegate {
-   
+    
     @IBOutlet weak var tfFullName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     var destinationLatitude = Double()
     var destinationLongitude = Double()
     let datePicker = UIDatePicker()
+    var strSelectedGender = ""
     
     var location: Location? {
         didSet {
@@ -32,7 +33,7 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
                 
                 destinationLatitude = cordinates?.latitude ?? 0.0
                 destinationLongitude = cordinates?.longitude ?? 0.0
-              
+                
                 var xCordinate = ""
                 var yCordinate = ""
                 
@@ -80,7 +81,7 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tfDOB.delegate = self
         self.setDatePicker()
         location = nil
@@ -120,8 +121,57 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     }
     
     @IBAction func btnOnSignUp(_ sender: Any) {
-        
+        if validateFields() {
+            call_WsSignUp()
+        }
     }
+    
+    
+    func validateFields() -> Bool {
+        guard let fullName = tfFullName.text, !fullName.isEmpty else {
+            showAlert(message: "Please enter your full name.")
+            return false
+        }
+        guard let email = tfEmail.text, isValidEmail(email) else {
+            showAlert(message: "Please enter a valid email.")
+            return false
+        }
+        guard let password = tfPassword.text, password.count >= 6 else {
+            showAlert(message: "Password must be at least 6 characters.")
+            return false
+        }
+        guard let dob = tfDOB.text, !dob.isEmpty else {
+            showAlert(message: "Please select your date of birth.")
+            return false
+        }
+        guard let address = tfAddress.text, !address.isEmpty else {
+            showAlert(message: "Please select your address.")
+            return false
+        }
+        guard !strSelectedGender.isEmpty else {
+            showAlert(message: "Please select your gender.")
+            return false
+        }
+        //        guard isEULAAccepted else {
+        //            showAlert(message: "Please accept the EULA to proceed.")
+        //            return false
+        //        }
+        return true
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        // Basic email validation using regex
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailTest.evaluate(with: email)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Validation Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     
     @IBAction func btnOnGenderSelection(_ sender: UIButton) {
         resetImage()
@@ -129,15 +179,19 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
         case 1:
             print("Male")
             self.imgVwMaleCheckBox.image = UIImage(named: "select_dot")
+            self.strSelectedGender = "Male"
         case 2:
             print("FeMale")
             self.imgVwFemaleCheckBox.image = UIImage(named: "select_dot")
+            self.strSelectedGender = "Female"
         case 3:
             print("Trans Male")
             self.imgVwTransMaleCheckBox.image = UIImage(named: "select_dot")
+            self.strSelectedGender = "Trans Male"
         default:
             print("Trans FeMale")
             self.imgVwTransFemaleCheckBox.image = UIImage(named: "select_dot")
+            self.strSelectedGender = "Trans Female"
         }
     }
     
@@ -149,7 +203,9 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     }
     
     @IBAction func btnGoToEULA(_ sender: Any) {
-        
+        self.imgVwEULA.image = UIImage(named: "select")
+        let vc = self.mainStoryboard.instantiateViewController(withIdentifier: "WebViewController")as! WebViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setDatePicker() {
@@ -197,5 +253,74 @@ class SignUpViewController: UIViewController, LocationServiceDelegate {
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
+}
 
+
+extension SignUpViewController {
+    
+    func call_WsSignUp(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        
+        objWebServiceManager.showIndicator()
+        
+        var dicrParam = [String:Any]()
+        
+        dicrParam = ["name":self.tfFullName.text!,
+                     "email":self.tfEmail.text!,
+                     "dob":self.tfDOB.text!,
+                     "password":self.tfPassword.text!,
+                     "address":self.tfAddress.text!,
+                     "gender":self.strSelectedGender,
+                     "lat":"\(self.destinationLatitude)",
+                     "lng":"\(self.destinationLongitude)",
+                     "device_type":"iOS",
+                     "device_token":objAppShareData.strFirebaseToken]as [String:Any]
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_SignUp, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            print(response)
+            if status == MessageConstant.k_StatusCode{
+                if let user_details  = response["result"] as? [String:Any] {
+                    
+                    objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details)
+                    objAppShareData.fetchUserInfoFromAppshareData()
+                    self.makeRootControllerHome()
+                }
+                else {
+                    objAlert.showAlert(message: "Something went wrong!", title: "", controller: self)
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                if let msgg = response["result"]as? String{
+                    objAlert.showAlert(message: msgg, title: "", controller: self)
+                }else{
+                    objAlert.showAlert(message: message ?? "", title: "", controller: self)
+                }
+                
+                
+            }
+            
+            
+        } failure: { (Error) in
+            //  print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+    }
+    
+    func makeRootControllerHome(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let vc = (self.mainStoryboard.instantiateViewController(withIdentifier: "SideMenuController") as? SideMenuController)!
+        let navController = UINavigationController(rootViewController: vc)
+        navController.isNavigationBarHidden = true
+        appDelegate.window?.rootViewController = navController
+    }
 }
